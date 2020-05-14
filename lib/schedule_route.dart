@@ -43,6 +43,13 @@ class _ScheduleRouteState extends State<ScheduleRoute> {
                   end: TableEventTime(hour: 16, minute: 0),
                   textStyle: laneTextStyle
                 ),
+                TableEvent(
+                    backgroundColor: Colors.blue,
+                    title: 'OS实验报告',
+                    start: TableEventTime(hour: 18, minute: 0),
+                    end: TableEventTime(hour: 20, minute: 0),
+                    textStyle: laneTextStyle
+                ),
               ]),
           LaneEvents(
               lane: buildLane(name: 'Tue'),
@@ -97,6 +104,13 @@ class _ScheduleRouteState extends State<ScheduleRoute> {
                   start: TableEventTime(hour: 14, minute: 0),
                   end: TableEventTime(hour: 16, minute: 0),
                   textStyle: laneTextStyle
+                ),
+                TableEvent(
+                    backgroundColor: Colors.orange,
+                    title: '看演唱会',
+                    start: TableEventTime(hour: 20, minute: 0),
+                    end: TableEventTime(hour: 22, minute: 0),
+                    textStyle: laneTextStyle
                 ),
               ]),
           LaneEvents(

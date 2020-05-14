@@ -64,6 +64,7 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
       ),
       drawer: new MyDrawer(),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue.shade100,
         // 底部导航
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.language), title: Text('Circle')),
