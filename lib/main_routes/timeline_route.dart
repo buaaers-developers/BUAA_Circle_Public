@@ -1,7 +1,8 @@
+import 'package:buaacircle/time/MyTime.dart';
 import 'package:flutter/material.dart';
 import 'package:timeline_list/timeline.dart';
 import 'package:timeline_list/timeline_model.dart';
-import 'tasks.dart';
+import '../task/tasks.dart';
 
 class TimelineRoute extends StatefulWidget {
   @override
@@ -9,6 +10,8 @@ class TimelineRoute extends StatefulWidget {
 }
 
 class _TimelineRouteState extends State<TimelineRoute> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +26,9 @@ class _TimelineRouteState extends State<TimelineRoute> {
 
   TimelineModel centerTimelineBuilder(BuildContext context, int i) {
     final task = tasks[i];
-    final textTheme = Theme.of(context).textTheme;
+    final textTheme = Theme
+        .of(context)
+        .textTheme;
     return TimelineModel(
       Card(
         color: task.category.cardColor,
@@ -38,12 +43,12 @@ class _TimelineRouteState extends State<TimelineRoute> {
               const SizedBox(
                 height: 8.0,
               ),
-              Text(task.time, style: textTheme.caption),
+              Text(datetime2String(task.dateTime), style: textTheme.caption),
               const SizedBox(
                 height: 8.0,
               ),
               Text(
-                task.name,
+                task.title,
                 style: textTheme.title,
                 textAlign: TextAlign.center,
               ),
@@ -52,11 +57,16 @@ class _TimelineRouteState extends State<TimelineRoute> {
         ),
       ),
       position:
-        i % 2 == 0 ? TimelineItemPosition.right : TimelineItemPosition.left,
+      i % 2 == 0 ? TimelineItemPosition.right : TimelineItemPosition.left,
       isFirst: i == 0,
       isLast: i == tasks.length,
       iconBackground: task.category.iconBackgroundColor,
       icon: task.category.icon,
     );
+  }
+
+  String datetime2String(DateTime dateTime) {
+    return dateTime.month.toString() + "月" + dateTime.day.toString() + "日，" +
+        dateTime.hour.toString() + ":" + dateTime.minute.toString();
   }
 }

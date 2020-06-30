@@ -1,9 +1,9 @@
-import 'package:buaacircle/schedule_route.dart';
-import 'package:buaacircle/timeline_route.dart';
+import 'package:buaacircle/main_routes/schedule_route.dart';
+import 'package:buaacircle/main_routes/timeline_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'circle_route.dart';
-import 'drawer.dart';
+import 'main_routes/circle_route.dart';
+import 'drawer/drawer.dart';
 
 void main() async {
   runApp(MyApp());
@@ -29,7 +29,6 @@ class ScaffoldRoute extends StatefulWidget {
 
 class _ScaffoldRouteState extends State<ScaffoldRoute>
     with SingleTickerProviderStateMixin {
-
   int _selectedIndex = 0;
 
   PageController pageController;
@@ -38,7 +37,6 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text(
           "BUAA_CIRCLE",
           style: TextStyle(
@@ -50,7 +48,7 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
         ),
         actions: <Widget>[
           //导航栏右侧菜单
-          IconButton(icon: Icon(Icons.search), onPressed: (){}),
+          IconButton(icon: Icon(Icons.search), onPressed: () {}),
           IconButton(icon: Icon(Icons.list), onPressed: () {}),
         ],
         leading: Builder(builder: (context) {
@@ -67,7 +65,8 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
         backgroundColor: Colors.blue.shade100,
         // 底部导航
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.language), title: Text('Circle')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.language), title: Text('Circle')),
           BottomNavigationBarItem(
               icon: Icon(Icons.schedule), title: Text('Schedule')),
           BottomNavigationBarItem(
@@ -78,11 +77,7 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
         onTap: _onItemTapped,
       ),
       body: PageView(
-        children: <Widget>[
-          CircleRoute(),
-          ScheduleRoute(),
-          TimelineRoute()
-        ],
+        children: <Widget>[CircleRoute(), ScheduleRoute(), TimelineRoute()],    //三个主页面
         controller: pageController,
         onPageChanged: onPageChanged,
       ),
@@ -97,14 +92,16 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
 
   void _onItemTapped(int index) {
     pageController.animateToPage(
-        index, duration: const Duration(milliseconds: 300),
-        curve: Curves.ease);
+      index,
+      duration: const Duration(milliseconds: 10),
+      curve: Curves.ease,
+    );
   }
 
   void onPageChanged(int page) {
     setState(() {
       this._selectedIndex = page;
-      print(_selectedIndex);
+      print(_selectedIndex); //print到控制台，用于调试，无作用，表示现在的页数
     });
   }
 }

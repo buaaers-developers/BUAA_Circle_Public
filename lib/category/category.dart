@@ -13,6 +13,7 @@ Map<String, Category> cateMap = {
     'course',
     Icon(
       Icons.school,
+      color: Colors.blue,
     ),
     Colors.blue,
     Colors.blue[100],
@@ -21,6 +22,7 @@ Map<String, Category> cateMap = {
     'contest',
     Icon(
       Icons.directions_run,
+      color: Colors.green,
     ),
     Colors.green,
     Colors.green[100],
@@ -29,6 +31,7 @@ Map<String, Category> cateMap = {
     'meeting',
     Icon(
       Icons.message,
+      color: Colors.yellow,
     ),
     Colors.yellow,
     Colors.yellow[100],
@@ -37,6 +40,7 @@ Map<String, Category> cateMap = {
     'collective',
     Icon(
       Icons.people_outline,
+      color: Colors.red,
     ),
     Colors.red,
     Colors.red[100],
@@ -45,6 +49,7 @@ Map<String, Category> cateMap = {
     'studentWork',
     Icon(
       Icons.work,
+      color: Colors.red,
     ),
     Colors.red,
     Colors.red[100],
@@ -53,6 +58,7 @@ Map<String, Category> cateMap = {
     'dailylife',
     Icon(
       Icons.fastfood,
+      color: Colors.orange,
     ),
     Colors.orange,
     Colors.orange[100],
@@ -61,6 +67,7 @@ Map<String, Category> cateMap = {
     'levy',
     Icon(
       Icons.accessibility_new,
+      color: Colors.teal,
     ),
     Colors.teal,
     Colors.teal[100],
