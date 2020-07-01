@@ -1,4 +1,3 @@
-import 'package:buaacircle/time/MyTime.dart';
 import 'package:flutter/material.dart';
 import 'package:timeline_list/timeline.dart';
 import 'package:timeline_list/timeline_model.dart';
